@@ -1,5 +1,6 @@
 import { Request, Response, Router } from "express";
 import { environment } from "../../config";
+import { evaluate } from "../controllers";
 
 const router = Router();
 
@@ -9,5 +10,7 @@ router.get("/", (req: Request, res: Response) => {
     message: `Welcome to Math Express Evaluator`
   });
 });
+
+router.get("/evaluate", evaluate);
 
 export default router;
